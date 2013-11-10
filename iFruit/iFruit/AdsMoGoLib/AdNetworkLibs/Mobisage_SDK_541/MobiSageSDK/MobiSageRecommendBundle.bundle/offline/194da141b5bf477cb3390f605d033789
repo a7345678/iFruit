@@ -1,0 +1,63 @@
+function impressiontrack(impressionContent)
+{
+	if(platform == "1" || platform == 1){
+		window.location = "fake://impressiontrack?"+encodeURIComponent(impressionContent);
+	}
+    else if(platform == "2" || platform == 2)
+    {
+		window.ad.impressiontrack(encodeURIComponent(impressionContent));
+    }
+}
+function onClickAd(tag)
+{
+    if(platform == "1" || platform == 1)
+    {
+       window.location = "fake://clickAd?" + tag;
+    }
+    else if(platform == "2" || platform == 2)
+    {
+        window.ad.clickAd(tag);
+    }
+}
+function clickVideo(event, VideoEvent) {
+    var tag = event.currentTarget.getAttribute("tag") +
+    "&ct=" + Math.round(event.currentTarget.currentTime) + "&ve=" + VideoEvent + "&wt=" + Math.round(event.currentTarget.duration);
+    if (platform == "1" || platform == 1) {
+        window.location = "fake://clickVideo?" + tag;
+    }
+	else if (platform == "2" || platform == 2) {
+	    window.ad.clickVideo(tag);
+	}
+}
+function onTrack(trackUrlparam)
+{
+	if(platform == "1" || platform == 1)
+	{
+		window.location = "fake://adtrack?"+ trackUrlparam;
+	}
+	else if(platform == "2" || platform == 2)
+	{
+		window.ad.adtrack (trackUrlparam);
+	}
+}
+function onCLoseWindow()
+{
+	if(platform == "1" || platform == 1)
+	{
+		window.location = "fake://closeWindow";
+	}
+	else if(platform == "2" || platform == 2)
+	{
+		window.ad.closeWindow();
+	}
+}
+function deviceinfo(paramurl){
+	if(platform == "1" || platform == 1)
+	{
+		window.location = "fake://deviceinfo?"+paramurl;
+	}
+	else if(platform == "2" || platform == 2)
+	{
+		window.ad.deviceinfo(paramurl);
+	}
+}

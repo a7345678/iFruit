@@ -1,0 +1,108 @@
+//
+// Prefix header for all source files of the 'Test' target in the 'Test' project
+//
+
+#import <Availability.h>
+
+#ifndef __IPHONE_3_0
+#warning "This project uses features only available in iPhone SDK 3.0 and later."
+#endif
+
+#ifdef __OBJC__
+#import <UIKit/UIKit.h>
+#import <Foundation/Foundation.h>
+#endif
+
+//判断设备是iphone还是iphone4
+#define isRetina ([UIScreen instancesRespondToSelector:@selector(currentMode)] ? CGSizeEqualToSize(CGSizeMake(640, 960), [[UIScreen mainScreen] currentMode].size) : NO)
+
+#define iPhone5 ([UIScreen instancesRespondToSelector:@selector(currentMode)] ? CGSizeEqualToSize(CGSizeMake(640, 1136), [[UIScreen mainScreen] currentMode].size) : NO)
+
+#define iPhone5offset (iPhone5?88:0)
+#define iPhone5offsetHalf (iPhone5?44:0)
+
+#define START_BG isPad?@"start_bg_ipad.jpg":@"start_bg.jpg"
+#define TOP_BG_TMP iPhone5?@"top_bg_5.jpg":@"top_bg.jpg"
+#define TOP_BG isPad?@"top_bg_ipad.jpg":TOP_BG_TMP
+#define BOTTOM_BG isPad?@"bottom_bg_ipad.jpg":@"bottom_bg.jpg"
+#define DROPFRUIT_BG_TMP iPhone5?@"dropfruit_bg_iphone5.jpg":@"dropfruit_bg.jpg"
+#define DROPFRUIT_BG isPad?@"dropfruit_bg_ipad.jpg":DROPFRUIT_BG_TMP
+#define BOTTOM_POINT_Y (isPad?576:320)
+
+#define ITEM_ARRAY_Y isPad?645:348
+#define CLICK_FOR_ITEM_Y isPad?712:378
+
+#define MOVE_RANGE isPad?4:2
+
+#define kHasEnabledGamekitUserDefaultsKey @"GameCenterKey"
+
+#define MoGo_ID @"26d50a02101743c6a7426e768eaa58ba"
+#define MoGo_ID_IPAD @"6eb8032c95044385aed0c3d04538e83b"
+
+#define ROW (isPad?6:6)
+#define COL (isPad?8:6)
+#define NO_OPER -1
+#define ROW_OPER 0
+#define COL_OPER 1
+#define FRUITWIDTH (isPad?96:53)
+#define FRUITHEIGHT (isPad?96:53)
+#define STARTX isPad?0:2
+#define STARTY isPad?0:2
+
+#define DELAYTIME 0.3
+#define SAMENUM 4
+
+#define kMinimumGestureLength 15
+#define kMaximumVariance 8
+
+#define GAMETIME 60
+#define GAMETIMESCALEX 180
+#define LEVELSCORE 500
+#define SCORESCALE 1
+#define DROPFRUITSCORESCALE 6
+#define HELPNUM 9
+#define TIPNUM 5
+#define BOMB4LEVEL 6
+
+#define USEWPLUS NO
+#define USEAD YES
+#define USEINVIT NO
+
+#define STATUS  2
+
+#define FRUITSTORMACHIA @"FruitStormAchievement4"
+#define FRUITSTORMACHIB @"FruitStormAchievement5"
+#define FRUITSTORMACHIC @"FruitStormAchievement6"
+#define GAMECENTERCATEGORY @"FruitStorm1_1"
+
+#define FRUITSTORMACHIAWPLUS @"FruitStormAchievementWplus7"
+#define FRUITSTORMACHIBWPLUS @"FruitStormAchievementWplus8"
+#define FRUITSTORMACHICWPLUS @"FruitStormAchievementWplus9"
+#define GAMECENTERCATEGORYWPLUS @"FruitStormWplus1_2"
+
+#define ACHIEVEMENT1 1000
+#define ACHIEVEMENT2 3000
+#define ACHIEVEMENT3 9000
+
+#define isPad (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad)
+
+#define isRetina ([UIScreen instancesRespondToSelector:@selector(currentMode)] ? CGSizeEqualToSize(CGSizeMake(640, 960), [[UIScreen mainScreen] currentMode].size) : NO)
+
+enum { TAG_1 = 1, TAG_2 = 2, TAG_3 = 3, TAG_4 = 4 };
+
+#define ARC4RANDOM_MAX      0x100000000
+
+#define M_E         2.71828182845904523536028747135266250   // e
+#define M_LOG2E     1.44269504088896340735992468100189214   // log 2e
+#define M_LOG10E    0.434294481903251827651128918916605082  // log 10e
+#define M_LN2       0.693147180559945309417232121458176568  // log e2
+#define M_LN10      2.30258509299404568401799145468436421   // log e10
+#define PI          3.14159
+#define M_PI        3.14159265358979323846264338327950288   // pi
+#define M_PI_2      1.57079632679489661923132169163975144   // pi/2
+#define M_PI_4      0.785398163397448309615660845819875721  // pi/4
+#define M_1_PI      0.318309886183790671537767526745028724  // 1/pi
+#define M_2_PI      0.636619772367581343075535053490057448  // 2/pi
+#define M_2_SQRTPI  1.12837916709551257389615890312154517   // 2/sqrt(pi)
+#define M_SQRT2     1.41421356237309504880168872420969808   // sqrt(2)
+#define M_SQRT1_2   0.707106781186547524400844362104849039  // 1/sqrt(2)
